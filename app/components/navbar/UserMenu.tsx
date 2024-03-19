@@ -4,9 +4,10 @@ import Avatar from "./Avatar";
 import {useCallback, useState} from "react"
 import MenuItem from "./MenuItem";
 import {log} from "node:util";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 export default function UserMenu() {
-
+const registerModal = useRegisterModal()
     const [isOpen,setIsOpen] = useState(false)
     const toggleOpen = useCallback(()=> {
         setIsOpen((value =>!value))
@@ -28,13 +29,13 @@ export default function UserMenu() {
                     </div>
                 </div>
             </div>
-            {isOpen &&  (
-                <div className="absolute rounded-xl shadow-md w-[40vw] ms:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
+            {isOpen && ( <div className="absolute rounded-xl shadow-md w-[40vw] ms:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm p-4 border-black border-2">
                     <div className="flex flex-col cursor-pointer">
                         <>
                         <MenuItem onClick={()=> (console.log("login"))}    label={"Login"}/>
-                        <MenuItem onClick={()=> (console.log("Sign up"))}    label={"Sign up"}/>
-
+                        <MenuItem
+                            onClick={registerModal.onOpen}
+                       label={"Sign up"}/>
                         </>
                     </div>
 

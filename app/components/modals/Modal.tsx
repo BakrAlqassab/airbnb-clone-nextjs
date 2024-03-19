@@ -112,6 +112,7 @@ secondaryActionLabel
                                     {/*    icon={IoIosCreate}*/}
                                     {/*/>*/}
                                 </div>
+                                {footer}
                             </div>
                         </div>
                     </div>
