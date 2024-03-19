@@ -6,8 +6,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "plugin:storybook/recommended"
+    "plugin:prettier/recommended"
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
@@ -19,8 +18,5 @@
         "endOfLine": "auto"
       }
     ]
-  },
-  "ignorePatterns": [
-    "**/*.test.*","**/stories/*", "**/ui-components/page.tsx", "**/graphql/**/__generated__/*", "**/lib/*"
-  ]
+  }
 }
