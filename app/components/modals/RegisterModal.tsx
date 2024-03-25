@@ -10,9 +10,12 @@ import Heading from "../Heading";
 import Input from "../inputs/Input";
 import {toast} from "react-hot-toast"
 import Button from "@/app/components/Button";
+import {signIn} from "next-auth/react";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 export default function RegisterModal() {
     const registerModal = useRegisterModal();
+    const loginModal = useLoginModal();
     const [isLoading, setIsLoading] = useState(false);
 
     const {
@@ -27,11 +30,16 @@ export default function RegisterModal() {
         }
     })
 
+    const toggle = useCallback(() => {
+        registerModal.onClose();
+        loginModal.onOpen()
+
+    }, [registerModal,loginModal])
+
     const onSubmit: SubmitHandler<FieldValues> = (data => {
         setIsLoading(true);
         axios.post("/api/register", data).then(() => {
-            console.log("pass")
-            registerModal.onClose()
+             registerModal.onClose()
         }).catch((error) => {
             toast.error("Something went wrong!")
         }).finally(() => {
@@ -56,22 +64,20 @@ export default function RegisterModal() {
                 outline
                 label="Continue with google"
                 icon={FcGoogle}
-                onClick={() => {
-                }}
+                onClick={() => signIn('google')}
             />
             <Button
                 outline
-                label="Continue with GitHub"
+                label="Continue with Github"
                 icon={AiFillGithub}
-                onClick={() => {
-                }}
+                onClick={() => signIn('github')}
             />
             <div className="text-neutral-500 text-center mt-4 font-light">
                 <div className="flex flex-row justify-center items-center gap-2">
                     <div>
                         Already have an account?
                     </div>
-                    <div className="text-neutral-800 cursor-pointer hover:underline" onClick={registerModal.onClose}>
+                    <div className="text-neutral-800 cursor-pointer hover:underline" onClick={toggle}>
                         Login
                     </div>
                 </div>

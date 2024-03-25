@@ -3,8 +3,9 @@ import Container from "../Container";
 import Logo from "@/app/components/navbar/Logo";
 import Search from "@/app/components/navbar/Search";
 import UserMenu from "@/app/components/navbar/UserMenu";
-import {User} from "@prisma/client"
-export default function Navbar({currentUser}:{currentUser:User | null}) {
+import {safeUser} from "@/app/types";
+import Categories from "@/app/components/navbar/Categories";
+export default function Navbar({currentUser}:{currentUser?:safeUser | null}) {
     return (
         <div className="fixed w-full bg-white z-10 shadow-sm">
             <div className="py-4 border-b-[1px]">
@@ -16,6 +17,8 @@ export default function Navbar({currentUser}:{currentUser:User | null}) {
                     </div>
                 </Container>
             </div>
+
+            <Categories />
         </div>
     )
 }

@@ -31,22 +31,27 @@ export default function LoginModal() {
         }
     })
 
+    const toggle = useCallback(() => {
+        loginModal.onClose();
+        registerModal.onOpen()
+
+    }, [loginModal,registerModal])
+
     const onSubmit: SubmitHandler<FieldValues> = (data => {
         setIsLoading(true);
-        console.log("data")
-        console.log(data)
         signIn("credentials",
             {...data, redirect: false}
-        ).then((callback:any) => {
+        ).then((callback: any) => {
             setIsLoading(false)
 
             if (callback?.ok) {
                 toast.success("Logged In")
+                loginModal.onClose()
                 router.refresh();
-                loginModal.onClose
+
             }
 
-            if(callback?.error) {
+            if (callback?.error) {
                 toast.error(callback.error)
             }
         })
@@ -67,23 +72,21 @@ export default function LoginModal() {
                 outline
                 label="Continue with google"
                 icon={FcGoogle}
-                onClick={() => {
-                }}
+                onClick={() => signIn('google')}
             />
             <Button
                 outline
                 label="Continue with GitHub"
                 icon={AiFillGithub}
-                onClick={() => {
-                }}
+                onClick={() => signIn("github")}
             />
             <div className="text-neutral-500 text-center mt-4 font-light">
                 <div className="flex flex-row justify-center items-center gap-2">
                     <div>
-                        Already have an account?
+                        First time using Airbnb?
                     </div>
-                    <div className="text-neutral-800 cursor-pointer hover:underline" onClick={registerModal.onClose}>
-                        Login
+                    <div className="text-neutral-800 cursor-pointer hover:underline" onClick={toggle}>
+                        Create an account
                     </div>
                 </div>
             </div>
