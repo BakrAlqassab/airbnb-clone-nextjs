@@ -47,10 +47,11 @@ secondaryActionLabel
 
     const handleSubmit = useCallback(() => {
         if (disabled) {
-            return
+            return;
         }
-        onSubmit()
-    }, [])
+
+        onSubmit();
+    }, [onSubmit, disabled]);
 
     const handleSecondaryAction = useCallback(() => {
         if (disabled || !secondaryAction) {
