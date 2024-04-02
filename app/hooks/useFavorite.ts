@@ -7,7 +7,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 
 interface IUseFavorite {
     listingId: string;
-    currentUser?: safeUser;
+    currentUser?: safeUser | null
 }
 
 const useFavorite = ({listingId, currentUser}: IUseFavorite) => {
@@ -23,36 +23,31 @@ const useFavorite = ({listingId, currentUser}: IUseFavorite) => {
 
     const toggleFavorite = useCallback(async (e: React.MouseEvent<HTMLDivElement>) => {
 
-        e.stopPropagation()
+            e.stopPropagation();
 
-        if (!currentUser) {
-            return loginModal.onOpen();
-        }
-
-        try {
-            let request;
-
-            if (hasFavorited) {
-                request = () => {
-                    console.log("1")
-                    axios.delete(`/api/favorites/${listingId}`);
-                }
-            } else {
-                console.log("2")
-                request = () => axios.post(`/api/favorites/${listingId}`);
+            if (!currentUser) {
+                return loginModal.onOpen();
             }
 
-            await request();
-            router.refresh();
-            toast.success("Success")
-        } catch
-            (error) {
-            toast.error("Something went wrong!")
-        }
+            try {
+                let request;
 
-    }, [currentUser, listingId, loginModal, hasFavorited, router])
+                if (hasFavorited) {
+                    request = () => axios.delete(`/api/favorites/${listingId}`);
+                } else {
+                    request = () => axios.post(`/api/favorites/${listingId}`);
+                }
 
-    return {hasFavorited, toggleFavorite}
+                await request();
+                router.refresh();
+                toast.success('Success');
+            } catch (error) {
+                toast.error('Something went wrong.');
+            }
+
+            }, [currentUser,listingId, loginModal,hasFavorited, router]);
+
+    return {hasFavorited,toggleFavorite}
 }
 
 export default useFavorite;
