@@ -25,9 +25,6 @@ export async function POST(
         description,
     } = body;
 
-    console.log("listing")
-    console.log(body)
-
     Object.keys(body).forEach((value: any) => {
         if (!body[value]) {
             NextResponse.error()

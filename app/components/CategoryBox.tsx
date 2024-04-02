@@ -5,7 +5,7 @@ import {useCallback} from "react";
 import qs from "query-string"
 
 interface categoryBoxProps {
-    key: string;
+    key?: string;
     label: string;
     Icon: IconType;
     selected?: boolean;
@@ -40,7 +40,7 @@ export default function CategoryBox({key, label, Icon, selected}: categoryBoxPro
         <div  onClick={handleClick} className={`flex flex-col items-center justify-center gap-2 p-3 border-b-2 hover:text-neutral-800
             transition cursor-pointer ${selected ? "border-b-neutral-800" : "border-transparent"} ${selected ? "text-neutral-800" : "text-neutral-500"}`}>
             <Icon size={26}/>
-            <div className="1fon-medium text-sm">   {label}</div>
+            <div className="1fon-medium text-sm">  {key} {label}</div>
         </div>
     )
 }
