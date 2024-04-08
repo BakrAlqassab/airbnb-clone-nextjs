@@ -3,12 +3,17 @@ export default async function getListings() {
     try {
 
         const listings = await prisma.listing.findMany({
-            orderBy:{
+            orderBy: {
                createdAt: "desc"
             }
         })
 
-        return listings
+        const safeListing = listings.map((listing)=> ({
+
+            ... listing, createdAt: listing.createdAt.toISOString()
+        }));
+
+        return safeListing
 
     } catch (error) {
         throw new Error(error)
