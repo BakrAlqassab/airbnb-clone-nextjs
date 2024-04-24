@@ -1,7 +1,6 @@
 "use client"
 import React, {useCallback, useMemo} from "react";
-import {Listing, Reservation} from "@prisma/client";
-import {safeListing, safeUser} from "@/app/types";
+import {safeListing, SafeReservations, safeUser} from "@/app/types";
 import {useRouter} from "next/navigation";
 import useCountries from "@/app/hooks/useCountries";
 import {format} from "date-fns"
@@ -13,7 +12,7 @@ import Button from "@/app/components/Button";
 interface ListingCardProps {
     key?: string;
     data: safeListing;
-    reservation?: Reservation;
+    reservation?: SafeReservations | undefined;
     onAction: (id: string) => void;
     disabled?: boolean;
     actionLabel?: string;
@@ -76,7 +75,7 @@ export default function ListingCard({
             <div className="flex flex-col gap-2 w-full">
                 <div className="aspect-square  w-full relative overflow-hidden rounded-xl ">
                     <Image fill alt="Listing" src={data.imageSrc}
-                           className="object-cover h-full w-full hover:scale-110 transition"/>
+                           className="object-contain h-full w-full hover:scale-110 transition"/>
                     <div className="absolute top-3 right-3">
                         <HeartButton listingId={data.id} currentUser={currentUser}/>
                     </div>

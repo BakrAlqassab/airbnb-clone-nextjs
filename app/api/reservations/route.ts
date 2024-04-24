@@ -24,12 +24,6 @@ export async function POST(
         NextResponse.error()
     }
 
-    console.log("1")
-    console.log(currentUser.id)
-    console.log(startDate)
-    console.log(endDate)
-    console.log(totalPrice)
-
     const listingAndReservation = await prisma.listing.update({
 
         where: {

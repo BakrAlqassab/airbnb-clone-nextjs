@@ -8,8 +8,11 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import {signOut} from "next-auth/react";
 import {safeUser} from "@/app/types";
 import UseRentModal from "@/app/hooks/useRentModal";
+import {useRouter} from "next/navigation";
 
 export default function UserMenu({currentUser}: { currentUser?: safeUser | null }) {
+
+    const router = useRouter()
     const registerModal = useRegisterModal()
     const loginModal = useLoginModal()
     const rentModal = UseRentModal()
@@ -21,6 +24,16 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
 
     function loginModalFunction() {
         loginModal.onOpen();
+        toggleOpen()
+    }
+
+    function tripsFunction() {
+        router.push("/trips");
+        toggleOpen()
+    }
+
+    function reservationFunctions() {
+        router.push("/reservations");
         toggleOpen()
     }
 
@@ -60,12 +73,10 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
                     <div className="flex flex-col cursor-pointer">
                         {currentUser ? (
                             <>
-                                <MenuItem onClick={() => {
-                                }} label={"My Trips!"}/>
+                                <MenuItem onClick={tripsFunction} label={"My Trips!"}/>
                                 <MenuItem onClick={() => {
                                 }} label={"My Favorites!"}/>
-                                <MenuItem onClick={() => {
-                                }} label={"My Reservations!"}/>
+                                <MenuItem onClick={reservationFunctions} label={"My Reservations!"}/>
                                 <MenuItem onClick={() => {
                                 }} label={"My Properties!"}/>
                                 <MenuItem onClick={rentModal.onOpen} label={"Airbnb my home!"}/>

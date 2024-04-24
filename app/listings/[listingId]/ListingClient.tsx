@@ -1,5 +1,5 @@
 "use client"
-import {safeListing, safeUser} from "@/app/types";
+import {safeListing, safeUser, SafeReservations} from "@/app/types";
 import {Reservation} from "@prisma/client";
 import {useCallback, useEffect, useMemo, useState} from "react";
 import {categories} from "@/app/components/navbar/Categories";
@@ -21,18 +21,18 @@ const initialDateRange = {
 }
 
 interface ListingClientProps {
-    reservation?: Reservation[];
-    listing: safeListing & { user: safeUser };
-    currentUser: safeUser | null;
+    reservations?: SafeReservations[];
+    listing: safeListing & { user: safeUser[] };
+    currentUser: safeUser[] | null;
 }
 
-export default function ListingClient({listing, reservation, currentUser}: ListingClientProps) {
+export default function ListingClient({listing, reservations, currentUser}: ListingClientProps) {
     const loginModal = useLoginModal();
     const router = useRouter();
 
     const disabledDates = useMemo(() => {
         let dates: Date[] = [];
-        reservation?.forEach((reservation: any) => {
+        reservations?.forEach((reservation: any) => {
             const range = eachDayOfInterval({
                 start: new Date(reservation.startDate),
                 end: new Date(reservation.endDate)
@@ -41,7 +41,7 @@ export default function ListingClient({listing, reservation, currentUser}: Listi
         })
 
         return dates;
-    }, [reservation])
+    }, [reservations])
 
     const [isLoading, setIsLoading] = useState(false)
     const [totalPrice, setTotalPrice] = useState(listing.price)
@@ -63,7 +63,7 @@ export default function ListingClient({listing, reservation, currentUser}: Listi
         }).then(() => {
             toast.success("Listing Reserved!");
             setDateRange(initialDateRange)
-            // redirect to /trip
+     router.push("/trips")
             router.refresh()
         }).catch(() => {
             toast.error("something went Wrong!")
