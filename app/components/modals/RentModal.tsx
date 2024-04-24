@@ -122,7 +122,7 @@ export default function RentModal() {
         <div className="flex flex-col gap-8">
             <Heading
                 title="which of these best descripe your place ?"
-                subtitle="Pick a category!"
+                subTitle="Pick a category!"
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap max-h-[50vh] overflow-y-auto">
                 {categories.map((item) => (
@@ -145,7 +145,7 @@ export default function RentModal() {
             <div className="flex flex-col gap-8">
                 <Heading
                     title="Where your place located ?"
-                    subtitle="Help guest find you"
+                    subTitle="Help guest find you"
                 />
                 <CountrySelect value={location} onChange={(value) => setCustomValue("location", value)}/>
                 <Map center={location?.latlng}/>
@@ -159,7 +159,7 @@ export default function RentModal() {
                 {step}
                 <Heading
                     title="Share some basics about your place"
-                    subtitle="What amenities do you have"
+                    subTitle="What amenities do you have"
                 />
                 <Counter title="Guests" subTitle="How many guests you allow ? " value={counter}
                          onChange={(value) => setCustomValue("guestCount", value)}/>
@@ -178,7 +178,7 @@ export default function RentModal() {
             <div className="flex flex-col gap-8">
                 <Heading
                     title="Add photo of your place"
-                    subtitle="Show guests how your place look like!"
+                    subTitle="Show guests how your place look like!"
                 />
                 <ImageUpload value={imageSrc} onChange={(value) => setCustomValue("imageSrc", value)}/>
 
@@ -191,7 +191,7 @@ export default function RentModal() {
             <div className="flex flex-col gap-8">
                 <Heading
                     title="How would you descripe your place ?"
-                    subtitle="short and sweet work best!"
+                    subTitle="short and sweet work best!"
                 />
                 <Input id="title" label="Title" disabled={isLoading} register={register} errors={errors} required/>
                 <hr/>
@@ -206,7 +206,7 @@ export default function RentModal() {
             <div className="flex flex-col gap-8">
                 <Heading
                     title="Now,  set your price!"
-                    subtitle="How much do you charge per night ?"
+                    subTitle="How much do you charge per night ?"
                 />
                 <Input id="price" label="Price" formatPrice type="number" disabled={isLoading} register={register}
                        errors={errors} required/>

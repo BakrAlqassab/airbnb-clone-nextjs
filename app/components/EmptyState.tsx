@@ -20,7 +20,7 @@ export default function EmptyState({
             className="h-[60vh] flex flex-col gap-2 justify-center items-center">
             <Heading
                 title={title as string}
-                subtitle={subTitle}
+                subTitle={subTitle}
                 center
             />
             <div className="w-48 mt-4">

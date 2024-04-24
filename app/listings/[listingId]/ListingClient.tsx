@@ -1,12 +1,11 @@
 "use client"
 import {safeListing, safeUser, SafeReservations} from "@/app/types";
-import {Reservation} from "@prisma/client";
 import {useCallback, useEffect, useMemo, useState} from "react";
 import {categories} from "@/app/components/navbar/Categories";
 import Container from "@/app/components/Container";
 import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
-import useLoginModal from "@/app/hooks/useRentModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 import {useRouter} from "next/navigation";
 import {differenceInCalendarDays, eachDayOfInterval} from "date-fns";
 import axios from "axios";
@@ -29,7 +28,6 @@ interface ListingClientProps {
 export default function ListingClient({listing, reservations, currentUser}: ListingClientProps) {
     const loginModal = useLoginModal();
     const router = useRouter();
-
     const disabledDates = useMemo(() => {
         let dates: Date[] = [];
         reservations?.forEach((reservation: any) => {
@@ -50,7 +48,8 @@ export default function ListingClient({listing, reservations, currentUser}: List
     const onCreateReservation = useCallback(() => {
 
         if (!currentUser) {
-            loginModal.onOpen()
+             loginModal.onOpen()
+            return
         }
 
         setIsLoading(true)
@@ -122,6 +121,7 @@ export default function ListingClient({listing, reservations, currentUser}: List
                             locationValue={listing.locationValue}
                         />
                         <div className="order-first mb-10 md:order-last md:col-span-3">
+                          --  {loginModal.isOpen} --
                             <ListingReservation
                                 price={listing.price}
                                 totalPrice={totalPrice}

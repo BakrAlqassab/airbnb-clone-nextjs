@@ -2,10 +2,10 @@
 
 interface HeadingProps {
     title: string;
-    subtitle?: string;
+    subTitle?: string;
     center?:boolean;
 }
-export default function Heading({title,subtitle,center}:HeadingProps) {
+export default function Heading({title,subTitle,center}:HeadingProps) {
 
 
     return (
@@ -15,7 +15,7 @@ export default function Heading({title,subtitle,center}:HeadingProps) {
         {title}
     </div>
     <div className="font-light text-neutral-500 mt-2">
-        {subtitle}
+        {subTitle}
     </div>
 
 </div>

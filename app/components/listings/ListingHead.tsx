@@ -20,7 +20,7 @@ export default function ListingHead({title, imageSrc, locationValue, id, current
     const location = getByValue(locationValue)
     return (
         <>
-            <Heading title={title} subtitle={`${location?.region}, ${location?.label}`}/>
+            <Heading title={title} subTitle={`${location?.region}, ${location?.label}`}/>
             <div className="w-full h-[60vh] overflow-hidden rounded-xl relative ">
                 <Image alt="image" src={imageSrc} fill className="object-cover w-full"/>
 

@@ -37,6 +37,11 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
         toggleOpen()
     }
 
+    function createNewAccommodation() {
+        rentModal.onOpen()
+        toggleOpen()
+    }
+
     function registerModalFunction() {
         registerModal.onOpen();
         toggleOpen()
@@ -79,7 +84,7 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
                                 <MenuItem onClick={reservationFunctions} label={"My Reservations!"}/>
                                 <MenuItem onClick={() => {
                                 }} label={"My Properties!"}/>
-                                <MenuItem onClick={rentModal.onOpen} label={"Airbnb my home!"}/>
+                                <MenuItem onClick={createNewAccommodation} label={"Airbnb my home!"}/>
 
                                 <hr/>
                                 <MenuItem onClick={() => signOut()} label={"Logout"}/>
