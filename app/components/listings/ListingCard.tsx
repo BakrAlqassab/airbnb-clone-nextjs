@@ -7,6 +7,7 @@ import {format} from "date-fns"
 import Image from "next/image";
 import HeartButton from "../HeartButton";
 import Button from "@/app/components/Button";
+import {useLocale} from "next-intl";
 
 
 interface ListingCardProps {
@@ -37,6 +38,7 @@ export default function ListingCard({
     const {getByValue} = useCountries();
 
     const location = getByValue(data.locationValue)
+    const lang = useLocale();
 
     const handleCancel = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
@@ -71,7 +73,7 @@ export default function ListingCard({
     }, [reservation])
 
     return (
-        <div onClick={() => router.push(`/listings/${data.id}`)} className="col-span-1 cursor-pointer group">
+        <div onClick={() => router.push(`${lang}/listings/${data.id}`)} className="col-span-1 cursor-pointer group" key={key}>
             <div className="flex flex-col gap-2 w-full">
                 <div className="aspect-square  w-full relative overflow-hidden rounded-xl ">
                     <Image fill alt="Listing" src={data.imageSrc}

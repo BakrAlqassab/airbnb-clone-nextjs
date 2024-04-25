@@ -1,7 +1,7 @@
 import EmptyState from "@/app/components/EmptyState";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import getReservations from "@/app/actions/getReservations";
-import TripsClient from "@/app/trips/TripsClient";
+import ReservationClient from "@/app/[locale]/trips/TripsClient";
 
 
 export default async function TripPage() {
@@ -12,18 +12,18 @@ export default async function TripPage() {
         return <EmptyState title="Unauthorized" subTitle="Please Login"/>
     }
 
-    const reservation = await getReservations({userId: currentUser.id})
+    const reservation = await getReservations({authorId: currentUser.id})
 
     if(reservation.length === 0) {
 
         return (
 
-            <EmptyState title="No trips Found!"  subTitle="Look like you haven't reserve any trip!" />
+            <EmptyState title="No reservations Found!"  subTitle="Look like no reservation on your property!" />
         )
     }
 
     return (
-      <TripsClient
+      <ReservationClient
           reservations={reservation}
           currentUser={currentUser}
       />

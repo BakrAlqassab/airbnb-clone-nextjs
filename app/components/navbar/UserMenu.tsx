@@ -9,6 +9,7 @@ import {signOut} from "next-auth/react";
 import {safeUser} from "@/app/types";
 import UseRentModal from "@/app/hooks/useRentModal";
 import {useRouter} from "next/navigation";
+import {useLocale} from "next-intl";
 
 export default function UserMenu({currentUser}: { currentUser?: safeUser | null }) {
 
@@ -27,13 +28,15 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
         toggleOpen()
     }
 
+    const lang = useLocale();
+
     function tripsFunction() {
-        router.push("/trips");
+        router.push(`/trips`);
         toggleOpen()
     }
 
     function reservationFunctions() {
-        router.push("/reservations");
+        router.push(`/reservations`);
         toggleOpen()
     }
 

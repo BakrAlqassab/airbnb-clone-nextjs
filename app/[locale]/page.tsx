@@ -1,5 +1,5 @@
-import Container from "./components/Container";
-import EmptyState from "./components/EmptyState";
+import Container from "@/app/components/Container";
+import EmptyState from "@/app/components/EmptyState";
 import getListings from "@/app/actions/getListings";
 import ListingCard from "@/app/components/listings/ListingCard";
 import getCurrentUser from "@/app/actions/getCurrentUser";
