@@ -10,8 +10,11 @@ import {safeUser} from "@/app/types";
 import UseRentModal from "@/app/hooks/useRentModal";
 import {useRouter} from "next/navigation";
 import {useLocale} from "next-intl";
+import {useMessages} from "@/app/utils/utils";
 
 export default function UserMenu({currentUser}: { currentUser?: safeUser | null }) {
+
+    const t = useMessages()
 
     const router = useRouter()
     const registerModal = useRegisterModal()
@@ -19,9 +22,17 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
     const rentModal = UseRentModal()
     const [isOpen, setIsOpen] = useState(false)
     const toggleOpen = useCallback(() => {
+
+        if (isOpen) {
+            window.removeEventListener("mousedown", onClickOutside);
+        } else {
+            window.addEventListener("mousedown", onClickOutside);
+        }
+
         setIsOpen((value => !value))
 
-    }, [])
+
+    }, [isOpen])
 
     function loginModalFunction() {
         loginModal.onOpen();
@@ -60,12 +71,21 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
 
     }, [currentUser, loginModal, rentModal])
 
+
+    const onClickOutside = (e: any) => {
+        const element = document.getElementById("user-menu-list");
+        if (element && !(element === e.target || element.contains(e.target))) {
+            window.removeEventListener("mousedown", onClickOutside);
+            setIsOpen(false);
+        }
+    };
+
     return (
-        <div className="relative">
+        <div className="relative"  id="user-menu-list">
             <div className="flex flex-row items-center gap-4">
                 <div onClick={onRent}
-                     className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer">Airbnb
-                    your home
+                     className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer">
+                    {t("modal.airbnbMyHome")}
                 </div>
                 <div onClick={toggleOpen}
                      className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-100 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition">

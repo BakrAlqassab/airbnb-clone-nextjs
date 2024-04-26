@@ -19,8 +19,6 @@ export default function Navbar({currentUser}:{currentUser?:safeUser | null}) {
 
 
     const lang = useLocale();
-    // console.log("lang");
-    // console.log(lang);
 
     const messages = useMessagesObject();
     return (

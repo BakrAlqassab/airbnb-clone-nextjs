@@ -27,7 +27,6 @@ export default function LanguageSelector({
     };
 
     async function changeLang(lang: language) {
-        console.log("changed tra")
         setLangMenuState(false)
         const routeUrl = await langChange(lang, pathName);
         router.push(routeUrl);

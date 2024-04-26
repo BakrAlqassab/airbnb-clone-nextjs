@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import createMiddleware from "next-intl/middleware";
 
 const intlMiddleware = createMiddleware({
@@ -23,7 +23,8 @@ export const config = {
          * - _next/image (image optimization files)
          * - _next/icons icons
          * - favicon.ico (favicon file)
+         * - images file inside public path
          */
-        "/((?!api|_next/static|_next/image|favicon.ico|img|icons).*)",
+        "/((?!api|_next/static|_next/image|favicon.ico|images|icons).*)",
     ],
 };

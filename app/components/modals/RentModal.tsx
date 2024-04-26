@@ -21,6 +21,7 @@ import { categories } from '../navbar/Categories';
 import ImageUpload from '../inputs/ImageUpload';
 import Input from '../inputs/Input';
 import Heading from '../Heading';
+import {useMessages} from "@/app/utils/utils";
 
 enum STEPS {
     CATEGORY = 0,
@@ -33,6 +34,7 @@ enum STEPS {
 
 export default function RentModal() {
     const rentModal = useRentModal();
+    const t = useMessages()
     const router = useRouter()
     const [isLoading, setIsLoading] = useState(false);
     const [step, setStep] = useState(STEPS.CATEGORY);
@@ -218,7 +220,7 @@ export default function RentModal() {
         <Modal
             disabled={isLoading}
             isOpen={rentModal.isOpen}
-            title="Airbnb your home!"
+            title= {t("modal.airbnbMyHome")}
             actionLabel={actionLabel}
             onSubmit={handleSubmit(onSubmit)}
             secondaryActionLabel={secondaryActionLabel}

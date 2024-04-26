@@ -31,6 +31,9 @@
     "anyWeek": "millä tahansa viikolla",
     "anyWhere": "missä tahansa"
   },
+  "modal": {
+    "airbnbMyHome": "Airbnb kotiisi!"
+  },
   "close": "Sulje",
   "select": "Valitse",
   "all": "Kaikki",

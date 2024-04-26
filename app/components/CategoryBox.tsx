@@ -33,7 +33,6 @@ export default function CategoryBox({key, label, Icon, selected}: categoryBoxPro
             delete updatedQuery.category
         }
         const url = qs.stringifyUrl({ url: "/", query: updatedQuery}, {skipNull: true})
-        console.log(url)
         router.push(url)
     }, [label,params,router])
     return (

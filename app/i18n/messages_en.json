@@ -31,6 +31,9 @@
     "anyWeek": "Any week",
     "anyWhere": "Any where"
   },
+  "modal": {
+    "airbnbMyHome": "Airbnb your home!"
+  },
   "footer": {
   },
   "close": "Close",

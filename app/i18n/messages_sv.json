@@ -31,7 +31,9 @@
     "anyWeek": "Vilken vecka som helst",
     "anyWhere": "Var som helst"
   },
-
+  "modal": {
+    "airbnbMyHome": "Airbnb ditt hem!"
+  },
   "close": "Stäng",
   "select": "Välja",
   "all": "Alla",
