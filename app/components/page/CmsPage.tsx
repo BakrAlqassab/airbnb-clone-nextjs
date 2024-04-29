@@ -1,13 +1,8 @@
 import { getContentfulPages } from "@/app/utils/contentfulutils";
 import {getLocale} from "next-intl/server";
 import NotFound from "next/dist/client/components/not-found-error";
-// import React from "react";
  import Widgets from "@/app/components/widgets/Widgets";
-// import ContentfulErrorPage from "@/components/widgets/ContetnfulErrorPage";
-// import BreadCrumb from "@/components/client/BreadCrumb";
-// import { cookies } from "next/headers";
-// import { getLang } from "@/utils/serverutils";
-// import { BrandSelector } from "@/components/widgets/BrandContent";
+ import BreadCrumb from "@/app/components/client/BreadCrumb";
 
 async function getPathDataForSlugs(
   slugParts: Array<string>,
@@ -50,8 +45,6 @@ async function getPathDataForSlugs(
     "-sys.createdAt",
     10,
   );
-  console.log("entry")
-  console.log(entry)
 
   // Add root entry
   if (entry && entry?.items?.length > 0) {
@@ -59,11 +52,9 @@ async function getPathDataForSlugs(
       url_path: `${lang}/${slugParts[0]}`,
       name: entry.items[0].fields.title,
     });
-    console.log("1")
 
 
     const subPages = entry.items[0].fields.subPages as Array<any>;
-    console.log(subPages)
     const index = 1;
 
     // Recursion
@@ -76,8 +67,7 @@ async function getPathDataForSlugs(
 export default async function CmsPage({ slug }: { slug: string }) {
   const lang = await getLocale();
   const slugParts = slug ? slug.split("/") : [];
-  // const breadCrumbValues = await getPathDataForSlugs(slugParts, lang);
-
+   const breadCrumbValues = await getPathDataForSlugs(slugParts, lang);
   let widgets;
   try {
     const result = await getContentfulPages(
@@ -86,7 +76,7 @@ export default async function CmsPage({ slug }: { slug: string }) {
       "-sys.createdAt",
       10,
     );
-    widgets = result ? result.items[0].fields.pageContent : null;
+    widgets = result && result.items[0] ? result.items[0].fields.pageContent : null;
     // widgets = result ? result.items[0].fields.widgets : null;
   } catch (e) {
     console.log("Error getting codes.", e);
@@ -96,8 +86,8 @@ export default async function CmsPage({ slug }: { slug: string }) {
   return (
     <div className="mb-16">
       <div>
-        {/*{breadCrumbValues && <BreadCrumb breadCrumbs={breadCrumbValues} />}*/}
-        <Widgets widgets={widgets} />
+        {breadCrumbValues && <BreadCrumb breadCrumbs={breadCrumbValues} />}
+        {widgets &&  <Widgets widgets={widgets} /> }
       </div>
     </div>
   );

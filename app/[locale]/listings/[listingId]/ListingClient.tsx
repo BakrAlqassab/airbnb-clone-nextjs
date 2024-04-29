@@ -26,6 +26,11 @@ interface ListingClientProps {
 }
 
 export default function ListingClient({listing, reservations, currentUser}: ListingClientProps) {
+    const [isLoading, setIsLoading] = useState(false)
+    const [totalPrice, setTotalPrice] = useState(listing.price)
+    const [dateRange, setDateRange] = useState<Range>(initialDateRange)
+
+
     const loginModal = useLoginModal();
     const router = useRouter();
     const disabledDates = useMemo(() => {
@@ -41,9 +46,11 @@ export default function ListingClient({listing, reservations, currentUser}: List
         return dates;
     }, [reservations])
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [totalPrice, setTotalPrice] = useState(listing.price)
-    const [dateRange, setDateRange] = useState<Range>(initialDateRange)
+    function checkDate(d){
+        return d.setHours(0, 0, 0, 0) == new Date().setHours(0, 0, 0, 0)
+    }
+
+    let isTodayReserved = disabledDates.some(checkDate) && dateRange.startDate.setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0);
 
     const onCreateReservation = useCallback(() => {
 
@@ -121,14 +128,13 @@ export default function ListingClient({listing, reservations, currentUser}: List
                             locationValue={listing.locationValue}
                         />
                         <div className="order-first mb-10 md:order-last md:col-span-3">
-                          --  {loginModal.isOpen} --
                             <ListingReservation
                                 price={listing.price}
                                 totalPrice={totalPrice}
                                 onChangeDate={(value)=> setDateRange(value)}
                                 dateRange={dateRange}
                                 onSubmit={onCreateReservation}
-                                disabled={isLoading}
+                                disabled={isLoading || isTodayReserved}
                                 disabledDates={disabledDates}
                             />
                         </div>

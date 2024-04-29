@@ -13,13 +13,6 @@ export default async function PropertiesPage() {
 
     const listings = await getListings({userId: currentUser.id})
 
-    console.log("listing")
-    console.log(listings)
-    console.log("currentUser")
-    console.log(currentUser)
-
-
-
     if(listings.length === 0) {
         return (
             <EmptyState title="No properities Found!"  subTitle="Look like you have no properties!" />

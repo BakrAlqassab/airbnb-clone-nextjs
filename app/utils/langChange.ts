@@ -2,11 +2,12 @@
 import { getEntries, withAllLocales } from "@/app/utils/contentfulutils";
 import { getLang } from "@/app/utils/serverUtils";
 export default async function langChange(lang: string, pathName: string) {
-    const simplePaths = ["account"];
+    const simplePaths = ["listings", "properties", "favorites", "reservations"];
 
     const pathParts = pathName.split("/");
 
-    const firstSlug = pathParts[2];
+    // const firstSlug = pathParts[2];
+    const firstSlug = pathParts.pop();
 
     const langCode = pathName ? pathName.split("/") : [];
 

@@ -1,4 +1,3 @@
-import { WidgetsProps } from "@/types";
 import React from "react";
 import DynamicComponentLoader from "./DynamicComponentLoader";
 import { useMessages } from "@/app/utils/utils";

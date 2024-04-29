@@ -11,7 +11,6 @@ export default async function Page({
   // slug is the url parameter used to detect the type of routable entity
   const { slug } = params;
   if (!(Array.isArray(slug) && slug.length)) {
-    console.log("15")
     return null;
   }
 
