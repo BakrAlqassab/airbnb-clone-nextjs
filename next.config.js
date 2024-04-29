@@ -12,6 +12,10 @@ const nextConfig = {
             "res.cloudinary.com"
         ]
     },
+    env: {
+        CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+        CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
+    },
     // i18n: {
     //     locales: ['en', 'fi', 'sv'], // Add your default language and other languages
     //     defaultLocale: 'fi', // Set the default language
