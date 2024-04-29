@@ -5,7 +5,7 @@ import getListings from "@/app/actions/getListings";
 import PropertiesClient from "./PropertiesClient"
 
 export default async function PropertiesPage() {
-    const currentUser = getCurrentUser()
+    const currentUser = await getCurrentUser()
 
     if (!currentUser) {
         return <EmptyState title="Unauthorized" subTitle="Please Login"/>
