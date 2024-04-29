@@ -32,7 +32,7 @@ yarn-error.log*
 
 
 # Local env files
-.env
+./env
 .env.*
 !.env.tpl
 next-env.d.ts
