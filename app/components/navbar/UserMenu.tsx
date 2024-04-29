@@ -51,6 +51,16 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
         toggleOpen()
     }
 
+    function favoriteFunctions() {
+        router.push(`/favorites`);
+        toggleOpen()
+    }
+
+    function propertiesFunctions() {
+        router.push(`/properties`);
+        toggleOpen()
+    }
+
     function createNewAccommodation() {
         rentModal.onOpen()
         toggleOpen()
@@ -102,11 +112,9 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
                         {currentUser ? (
                             <>
                                 <MenuItem onClick={tripsFunction} label={"My Trips!"}/>
-                                <MenuItem onClick={() => {
-                                }} label={"My Favorites!"}/>
+                                <MenuItem onClick={favoriteFunctions} label={"My Favorites!"}/>
                                 <MenuItem onClick={reservationFunctions} label={"My Reservations!"}/>
-                                <MenuItem onClick={() => {
-                                }} label={"My Properties!"}/>
+                                <MenuItem onClick={propertiesFunctions} label={"My Properties!"}/>
                                 <MenuItem onClick={createNewAccommodation} label={"Airbnb my home!"}/>
 
                                 <hr/>

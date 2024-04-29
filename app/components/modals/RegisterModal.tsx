@@ -33,12 +33,14 @@ export default function RegisterModal() {
     const toggle = useCallback(() => {
         registerModal.onClose();
         loginModal.onOpen()
+        toast.success("Success")
 
     }, [registerModal,loginModal])
 
     const onSubmit: SubmitHandler<FieldValues> = (data => {
         setIsLoading(true);
         axios.post("/api/register", data).then(() => {
+             loginModal.onOpen()
              registerModal.onClose()
         }).catch((error) => {
             toast.error("Something went wrong!")
