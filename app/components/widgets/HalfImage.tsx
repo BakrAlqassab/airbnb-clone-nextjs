@@ -42,7 +42,7 @@ export default function WysiwygBlock({ content }: any) {
                         onClick={() => router.push(button.fields.slug)}
                         label={button.fields.entryName}
                         className="font-semibold max-[768px]:w-full"
-                        theme={button.fields.linkType || "primary"}
+                        theme={button.fields.buttonType || "primary"}
                         external={button.fields.urlPath ? true : false}
                         URL={button.fields.urlPath || "#"}
                       />

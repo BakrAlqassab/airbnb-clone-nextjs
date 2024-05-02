@@ -17,6 +17,7 @@ import {usePathname, useSearchParams} from "next/navigation";
 import {FaSkiing} from "react-icons/fa";
 import {BsSnow} from "react-icons/bs";
 import {IoDiamond} from "react-icons/io5";
+import {useLocale} from "next-intl";
 
 export const categories = [
     {
@@ -99,8 +100,9 @@ export default function Categories() {
     const params = useSearchParams();
     const category = params?.get("category");
     const pathname = usePathname();
+    const lang = useLocale()
 
-    const isMainPage = pathname === "/"
+    const isMainPage = pathname === `/${lang}`
     if (!isMainPage) {
         return null
     }
@@ -109,7 +111,6 @@ export default function Categories() {
         <Container>
             <div className="pt-4 flex flex-4 items-center justify-between overflow-x-auto">
                 {categories && categories.map((item) => {
-
                     return <CategoryBox key={item.label} label={item.label} selected={category === item.label}
                                         Icon={item.icon}/>
                 })}

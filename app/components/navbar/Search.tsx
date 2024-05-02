@@ -1,12 +1,16 @@
 "use client"
 import {BiSearch} from "react-icons/bi"
 import {useMessages} from "@/app/utils/utils";
+import useSearchModal from "@/app/hooks/useSearchModal";
 
 export default function Search() {
+
+    const searchModal = useSearchModal()
 
     const t = useMessages()
     return (
         <div
+            onClick={searchModal.onOpen}
             className="border-[1px] w-full md:w-auto py-2 rounded-full shadow-sm hover:shadow-md transition cursor-pointer"
         >
 

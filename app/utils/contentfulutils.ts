@@ -24,7 +24,7 @@ export async function getContentfulPages(
     include?: any,
 ) {
     const lang =  useLocale();
-    if (pagePath) {
+    if (pagePath && lang !== "sv") {
         const response = await client.getEntries({
             content_type: content_type,
             "fields.slug": pagePath,

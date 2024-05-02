@@ -63,14 +63,14 @@ const LspdButton = (props: Props) => {
       case LspdButtonTheme.Primary:
         return [
           ...styles,
-          ...["bg-brand-black", "text-white", "hover:opacity-75"],
+          ...["bg-black", "text-white", "hover:opacity-75"],
           ...["hover:enabled:bg-gray-700"],
           ...["active:enabled:bg-gray-800"],
         ];
       case LspdButtonTheme.Secondary:
         return [
           ...styles,
-          ...["border-black", "text-brand-gray-900", "outline-secondary-300"],
+          ...["border-black", "text-gray-900", "outline-secondary-300"],
           ...["hover:enabled:bg-secondary-400"],
           ...["active:enabled:bg-secondary"],
         ];

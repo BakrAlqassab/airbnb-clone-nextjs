@@ -3,15 +3,24 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { language } from "@/app/utils/utils";
-import { usePathname, useRouter } from "next/navigation";
+import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import langChange from "@/app/utils/langChange";
 import { useMessages } from "@/app/utils/utils";
 
+interface LanguageSelectorProps {
+    className?: string;
+    messages: Record<string, any>;
+    currentLanguage: string;
+}
 export default function LanguageSelector({
                                              className,
                                              currentLanguage,
+
                                          }: LanguageSelectorProps) {
+
+
     const [isLangMenuOpen, setLangMenuState] = useState(false);
+    const searchParams = useSearchParams()!;
 
     const pathName = usePathname();
     const router = useRouter();
@@ -28,7 +37,7 @@ export default function LanguageSelector({
 
     async function changeLang(lang: language) {
         setLangMenuState(false)
-        const routeUrl = await langChange(lang, pathName);
+        const routeUrl = await langChange(lang, pathName, searchParams);
         router.push(routeUrl);
     }
 
@@ -48,8 +57,6 @@ export default function LanguageSelector({
         fi: "Suomeksi",
     };
 
-    // const languages: any = data.languages;
-    // const languageKeys = Object.keys(data.languages);
     const activeClass = `!border-black`;
 
     return (
@@ -96,8 +103,4 @@ export default function LanguageSelector({
     );
 }
 
-interface LanguageSelectorProps {
-    className?: string;
-    messages: Record<string, any>;
-    currentLanguage: string;
-}
+

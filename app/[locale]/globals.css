@@ -385,26 +385,11 @@ input {
     animation: fadeIn 0.5s;
 }
 
-.fade-in-product-image {
-    animation: fadeIn2 1.5s;
-}
 
 .square {
     width: 100%;
     height: 0;
     padding-top: 100%;
-}
-
-/*product image zoom*/
-
-.main-image-container img {
-    transform: scale(var(--zoom, 1));
-    transform-origin: var(--x) var(--y);
-    transition: transform 0.3s ease;
-}
-
-.main-image-container:hover {
-    --zoom: 3; /* "Zoom value"*/
 }
 
 /*Text editor */
@@ -486,22 +471,6 @@ input {
     @apply max-[360px]:px-1 flex px-4 h-full flex-col font-semibold text-xs items-center text-center justify-center cursor-pointer hover:bg-gray-100;
 }
 
-.product-link {
-    &:hover {
-        .product-link-image-bg {
-            background-color: var(--ec-grays-400) !important;
-
-            img {
-                filter: var(--filter-shadow) brightness(90%);
-            }
-        }
-
-        .product-link-text {
-            @apply underline underline-offset-4;
-        }
-    }
-}
-
 .slug-wrapper {
     --padding-x: 1rem;
     padding-left: var(--padding-x);
@@ -568,3 +537,159 @@ details {
         display: none;
     }
 }
+
+
+/*                                      Loading Building                                 */
+
+:root {
+    --hue: 223;
+    --bg: hsl(var(--hue),90%,90%);
+    --fg: hsl(var(--hue),90%,10%);
+    --primary: hsl(var(--hue),90%,50%);
+    --trans-dur: 0.3s;
+    /*font-size: calc(16px + (32 - 16) * (100vw - 320px) / (2560 - 320));*/
+}
+
+.bike {
+    display: block;
+    margin: auto;
+    width: 16em;
+    height: auto;
+    color: var(--fg);
+}
+.bike__body,
+.bike__front,
+.bike__handlebars,
+.bike__pedals,
+.bike__pedals-spin,
+.bike__seat,
+.bike__spokes,
+.bike__spokes-spin,
+.bike__tire {
+    animation: bikeBody 3s ease-in-out infinite;
+    stroke: var(--primary);
+    transition: stroke var(--trans-dur);
+}
+.bike__front {
+    animation-name: bikeFront;
+}
+.bike__handlebars {
+    animation-name: bikeHandlebars;
+}
+.bike__pedals {
+    animation-name: bikePedals;
+}
+.bike__pedals-spin {
+    animation-name: bikePedalsSpin;
+}
+.bike__seat {
+    animation-name: bikeSeat;
+}
+.bike__spokes,
+.bike__tire {
+    stroke: currentColor;
+}
+.bike__spokes {
+    animation-name: bikeSpokes;
+}
+.bike__spokes-spin {
+    animation-name: bikeSpokesSpin;
+}
+.bike__tire {
+    animation-name: bikeTire;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: hsl(var(--hue),90%,10%);
+        --fg: hsl(var(--hue),90%,90%);
+    }
+}
+
+/* Animations */
+@keyframes bikeBody {
+    from { stroke-dashoffset: 79; }
+    33%,
+    67% { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: -79; }
+}
+@keyframes bikeFront {
+    from { stroke-dashoffset: 19; }
+    33%,
+    67% { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: -19; }
+}
+@keyframes bikeHandlebars {
+    from { stroke-dashoffset: 10; }
+    33%,
+    67% { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: -10; }
+}
+@keyframes bikePedals {
+    from {
+        animation-timing-function: ease-in;
+        stroke-dashoffset: -25.133;
+    }
+    33%,
+    67% {
+        animation-timing-function: ease-out;
+        stroke-dashoffset: -21.991;
+    }
+    to {
+        stroke-dashoffset: -25.133;
+    }
+}
+@keyframes bikePedalsSpin {
+    from { transform: rotate(0.1875turn); }
+    to { transform: rotate(3.1875turn); }
+}
+@keyframes bikeSeat {
+    from { stroke-dashoffset: 5; }
+    33%,
+    67% { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: -5; }
+}
+@keyframes bikeSpokes {
+    from {
+        animation-timing-function: ease-in;
+        stroke-dashoffset: -31.416;
+    }
+    33%,
+    67% {
+        animation-timing-function: ease-out;
+        stroke-dashoffset: -23.562;
+    }
+    to {
+        stroke-dashoffset: -31.416;
+    }
+}
+@keyframes bikeSpokesSpin {
+    from { transform: rotate(0); }
+    to { transform: rotate(3turn); }
+}
+@keyframes bikeTire {
+    from {
+        animation-timing-function: ease-in;
+        stroke-dashoffset: 56.549;
+        transform: rotate(0);
+    }
+    33% {
+        stroke-dashoffset: 0;
+        transform: rotate(0.33turn);
+    }
+    67% {
+        animation-timing-function: ease-out;
+        stroke-dashoffset: 0;
+        transform: rotate(0.67turn);
+    }
+    to {
+        stroke-dashoffset: -56.549;
+        transform: rotate(1turn);
+    }
+}
+
+
+
+/*                                                              Second loader for test */
+/*https://codingtorque.com/20-css-loaders/#3-d-cube-loader*/

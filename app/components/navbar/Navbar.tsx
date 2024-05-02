@@ -7,16 +7,8 @@ import {safeUser} from "@/app/types";
 import Categories from "@/app/components/navbar/Categories";
 import LanguageSelector from "@/app/components/navbar/LanguageSelector";
 import { useLocale } from "next-intl";
-import { language, useMessagesObject, useMessagesServer } from "@/app/utils/utils";
-import Image from "next/image";
-const messages = useMessagesObject();
-const lang = useLocale as language;
+import {useMessagesObject } from "@/app/utils/utils";
 export default function Navbar({currentUser}:{currentUser?:safeUser | null}) {
-
-
-
-
-
 
     const lang = useLocale();
 
@@ -34,8 +26,7 @@ export default function Navbar({currentUser}:{currentUser?:safeUser | null}) {
                     </div>
                 </Container>
             </div>
-
-            <Categories/>
+            <Categories />
         </div>
     )
 }
