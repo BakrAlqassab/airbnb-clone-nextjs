@@ -7,6 +7,10 @@ html,bode,
     height: 100%;
 }
 
+body {
+    height: 100vh;
+}
+
 .leaflet-bottom,
 .leaflet-control,
 .leaflet-pane,
@@ -279,7 +283,10 @@ input {
 
 .swiper-slide {
     position: relative;
-    width: auto !important;
+    /*width: auto !important;*/
+    width: 25% !important;
+
+    /*when disable the below, will have fancy 3D card*/
     transform: none !important;
 }
 
@@ -332,6 +339,10 @@ input {
         width: 3rem;
         height: 3rem;
     }
+
+    .swiper-slide {
+        width: auto !important;
+    }
 }
 
 @media (max-width: 450px) {
@@ -340,51 +351,6 @@ input {
         height: 2.5rem;
     }
 }
-
-/* account page */
-.account_login_register {
-    background-image: url(/img/bg_login_xxl.jpg);
-    @media (max-width: 1024px) {
-        background-image: url(/img/bg_login_1024.jpg);
-    }
-
-    /* Show the bg at full height of viewport. Calculated by: viewport height - main menu height */
-    min-height: calc(100vh - 64px);
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    @apply py-8;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn2 {
-    0% {
-        opacity: 0;
-        transform: scale(90%);
-    }
-
-    60% {
-        opacity: 0;
-        transform: scale(90%);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(100%);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 0.5s;
-}
-
 
 .square {
     width: 100%;

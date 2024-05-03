@@ -7,6 +7,7 @@ import {useCallback, useState} from "react";
 import axios from "axios";
 import {toast} from "react-hot-toast";
 import ListingCard from "@/app/components/listings/ListingCard";
+import {SwiperSlider} from "@/app/components/client/SwiperSlider";
 
 interface TripsClientProps {
     reservations: SafeReservations[];
@@ -33,31 +34,32 @@ export default function TripsClient({reservations, currentUser}: TripsClientProp
             )
         }
 
-
-
     }, [router])
 
     return (
         <Container>
             <Heading title="Trips!" subTitle="where you have been and where you're going!"/>
-            <div
-                className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
-                {reservations.map((reservation) => (
+            {/*<div*/}
+            {/*    className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">*/}
+                <SwiperSlider>
+                    {reservations.map((reservation) => (
+                        <div className="mr-4 mt-10 ">
+                        <ListingCard
+                            key={reservation.id}
+                            data={reservation.listing}
+                            reservation={reservation}
+                            actionLabel="Cancel reservation!"
+                            currentUser={currentUser}
+                            onAction={onCancel}
+                            actionId={reservation.id}
+                            disabled={reservation.id === deletingId}
 
-                    <ListingCard
-                        key={reservation.id}
-                        data={reservation.listing}
-                        reservation={reservation}
-                        actionLabel="Cancel reservation!"
-                        currentUser={currentUser}
-                        onAction={onCancel}
-                        actionId={reservation.id}
-                        disabled={reservation.id === deletingId}
+                        />
+                        </div>
+                    ))}
+                </SwiperSlider>
 
-                    />
-                ))}
-
-            </div>
+            {/*</div>*/}
         </Container>
     )
 }
