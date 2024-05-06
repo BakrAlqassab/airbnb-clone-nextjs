@@ -505,6 +505,20 @@ details {
 }
 
 
+
+
+.gradient-airbnb-home-text {
+
+/*background: linear-gradient(90deg,#00ffff,#ff00c3);*/
+background: linear-gradient(90deg,#000000,#f43f5e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: solid 1px;
+    user-select: none;
+}
+
+
 /*                                      Loading Building                                 */
 
 :root {
@@ -659,3 +673,26 @@ details {
 
 /*                                                              Second loader for test */
 /*https://codingtorque.com/20-css-loaders/#3-d-cube-loader*/
+
+
+
+
+
+
+/*// Particles*/
+
+.particles {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+
+
+
+
+
+

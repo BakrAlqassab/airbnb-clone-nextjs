@@ -20,7 +20,8 @@ export default async function langChange(lang: string, pathName: string, searchP
         locationValue,
         guestCount,
         roomCount,
-        bathroomCount
+        bathroomCount,
+        category
     }
 
     if (startDate) {
@@ -47,6 +48,8 @@ export default async function langChange(lang: string, pathName: string, searchP
     const slugAfterLocale = pathName.substring(langCode[1].length + 1);
     // if homepage or a path we have whitelisted, make simple conversion
     if (!firstSlug || simplePaths.includes(firstSlug)) {
+        console.log("fff")
+        console.log(slugAfterLocale)
         return "/" + lang + slugAfterLocale;
     }
     // Next we check weather we are on a contentful page

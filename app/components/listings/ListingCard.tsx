@@ -74,9 +74,9 @@ export default function ListingCard({
 
     return (
         <div onClick={() => router.push(`/${lang}/listings/${data.id}`)} className="col-span-1 cursor-pointer group" key={key}>
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-2 w-full select-none">
                 <div className="aspect-square  w-full relative overflow-hidden rounded-xl ">
-                    <Image fill alt="Listing" src={data.imageSrc}
+                    <Image fill alt="Listing" src={data.imageSrc.length ? data.imageSrc: "/images/default-product-image.png"}
                            className="object-contain h-full w-full hover:scale-110 transition"/>
                     <div className="absolute top-3 right-3">
                         <HeartButton listingId={data.id} currentUser={currentUser}/>

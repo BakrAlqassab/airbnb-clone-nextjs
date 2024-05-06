@@ -109,7 +109,7 @@ export default function Categories() {
 
     return (
         <Container>
-            <div className="pt-4 flex flex-4 items-center justify-between overflow-x-auto">
+            <div className="pt-4 flex flex-4 items-center justify-between overflow-x-auto select-none">
                 {categories && categories.map((item) => {
                     return <CategoryBox key={item.label} label={item.label} selected={category === item.label}
                                         Icon={item.icon}/>

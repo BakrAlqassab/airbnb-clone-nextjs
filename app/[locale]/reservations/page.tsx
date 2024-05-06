@@ -2,7 +2,6 @@ import EmptyState from "@/app/components/EmptyState";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import getReservations from "@/app/actions/getReservations";
 import ReservationClient from "@/app/[locale]/reservations/ReservationClient";
-import Loading from "@/app/[locale]/loading";
 
 
 export default async function TripPage() {
@@ -21,10 +20,16 @@ export default async function TripPage() {
             <EmptyState title="No reservations Found!"  subTitle="Look like no reservation on your property!" />
         )
     }
+
+
     return (
+        <div>
+
             <ReservationClient
                 reservations={reservation}
                 currentUser={currentUser}
             />
+        </div>
+
     )
 }

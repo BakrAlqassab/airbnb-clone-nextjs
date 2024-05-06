@@ -94,7 +94,7 @@ export default function UserMenu({currentUser}: { currentUser?: safeUser | null 
         <div className="relative"  id="user-menu-list">
             <div className="flex flex-row items-center gap-4">
                 <div onClick={onRent}
-                     className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer">
+                     className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer gradient-airbnb-home-text">
                     {t("modal.airbnbMyHome")}
                 </div>
                 <div onClick={toggleOpen}

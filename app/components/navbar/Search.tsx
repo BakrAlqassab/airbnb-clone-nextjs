@@ -14,7 +14,7 @@ export default function Search() {
             className="border-[1px] w-full md:w-auto py-2 rounded-full shadow-sm hover:shadow-md transition cursor-pointer"
         >
 
-            <div className="flex flex-row items-center justify-between">
+            <div className="flex flex-row items-center justify-between select-none">
                 <div className="text-sm font-semibold px-6">
                      {t("navigation.anyWhere")}
 

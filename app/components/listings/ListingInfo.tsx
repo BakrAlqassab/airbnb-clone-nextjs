@@ -41,7 +41,7 @@ export default function ListingInfo({
 
     const coordinates = getByValue(locationValue)?.latlng
     return (
-        <div className="col-span-4 gap-8 flex flex-col  ">
+        <div className="col-span-4 gap-8 flex flex-col select-none ">
             <div className="flex flex-col gap-2">
                 <div className="text-xl font-semibold flex flex-row items-center gap-2">
 
