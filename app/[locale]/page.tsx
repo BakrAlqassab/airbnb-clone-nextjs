@@ -22,11 +22,14 @@ export default async function Home({searchParams}: HomePageProps) {
     return (
         <Container>
             <div
-                className="pt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
+                className="pt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8 main-page">
 
                     {listings && listings.map((listing:safeListing) => {
                         return (
-                            <ListingCard currentUser={currentUser} key={listing?.id} data={listing}/>
+                            <div className="m-p-t">
+                                <ListingCard currentUser={currentUser} key={listing?.id} data={listing}/>
+                            </div>
+
                         )
                     })}
                 </div>

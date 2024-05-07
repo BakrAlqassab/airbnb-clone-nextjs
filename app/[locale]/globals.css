@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html,bode,
-:root {
-    height: 100%;
-}
+/*html,bode,*/
+/*:root {*/
+/*    height: 100%;*/
+/*}*/
 
-body {
-    height: 100vh;
-}
+/*body {*/
+/*    height: 100vh;*/
+/*}*/
 
 .leaflet-bottom,
 .leaflet-control,
@@ -102,11 +102,6 @@ h5 {
 h6 {
     font-size: 20px;
     font-weight: 600;
-}
-
-.font-default {
-    font-family: var(--base-font-family);
-    font-size: var(--base-font-size);
 }
 
 /* BUTTONS */
@@ -689,9 +684,21 @@ background: linear-gradient(90deg,#000000,#f43f5e);
     z-index: 0;
 }
 
+/*" make the opacity applied on not selected cards"*/
+/*.main-page:hover > :not(:hover) {*/
+/*    !*opacity: .4;*!*/
+/*    filter: blur(10px);*/
+/*    transform: scale(0.9,0.9);*/
 
+/*}*/
 
-
-
-
-
+/*" make the blur applied on not selected cards"*/
+.main-page .m-p-t{
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 500ms;
+}
+.main-page:hover>.m-p-t:not(:hover){
+    filter: blur(10px);
+    transform: scale(0.9,0.9);
+}
