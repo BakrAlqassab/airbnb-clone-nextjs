@@ -9,8 +9,6 @@ import ToasterProvider from "@/app/providers/ToasterProvider";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import RentModal from "@/app/components/modals/RentModal";
  import {useLocale} from "next-intl";
-import Particles from "react-tsparticles";
-import {loadFull} from "tsparticles";
 
 const font = Nunito({ subsets: ['latin'] })
 
@@ -29,14 +27,10 @@ export default async function RootLayout({
 }) {
     const currentUser = await getCurrentUser()
      const lang = useLocale();
-
-
-
-    return (
+  return (
       <html lang={lang}>
       <body className={font.className} >
-      {/*<Modal isOpen={false} title="Login Modal" actionLabel="Submit"/>*/}
-      <ToasterProvider />
+      <ToasterProvider/>
       <RegisterModal/>
       <LoginModal/>
       <SearchModal/>

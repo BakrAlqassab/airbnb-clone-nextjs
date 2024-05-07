@@ -9,9 +9,9 @@ export default function Heading({title,subTitle,center}:HeadingProps) {
 
 
     return (
-<div className={`${center ?"text-center": "text-start"} text-white `}>
+<div className={center ?"text-center": "text-start"}>
 
-    <div className="text-2xl font-bold text-black">
+    <div className="text-2xl font-bold">
         {title}
     </div>
     <div className="font-light text-neutral-500 mt-2">

@@ -4,8 +4,6 @@ import getListings, {IListingParams} from "@/app/actions/getListings";
 import ListingCard from "@/app/components/listings/ListingCard";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import {safeListing} from "@/app/types";
-import Particles from "react-tsparticles";
-import {loadFull} from "tsparticles";
 
 interface HomePageProps {
 searchParams: IListingParams;

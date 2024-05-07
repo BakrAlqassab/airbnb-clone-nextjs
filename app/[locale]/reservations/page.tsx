@@ -20,16 +20,10 @@ export default async function TripPage() {
             <EmptyState title="No reservations Found!"  subTitle="Look like no reservation on your property!" />
         )
     }
-
-
     return (
-        <div>
-
             <ReservationClient
                 reservations={reservation}
                 currentUser={currentUser}
             />
-        </div>
-
     )
 }
