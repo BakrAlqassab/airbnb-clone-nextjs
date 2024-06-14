@@ -12,7 +12,7 @@ const existWidgets = [
   "line",
   "accordion",
 ];
-export default function Widgets({ widgets }: { widgets: any;}) {
+export default function Widgets({ widgets }: { widgets: any }) {
   const t = useMessages();
   return (
     <div>
@@ -31,7 +31,10 @@ export default function Widgets({ widgets }: { widgets: any;}) {
         )
       ) : (
         <div>
-          <EmptyState title={t("noContent")}  subTitle="please check your URL :) "/>
+          <EmptyState
+            title={t("noContent")}
+            subTitle="please check your URL :) "
+          />
         </div>
       )}
     </div>

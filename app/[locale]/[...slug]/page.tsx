@@ -1,9 +1,7 @@
-
 import CmsPage from "@/app/components/page/CmsPage";
 
 export default async function Page({
   params,
-  searchParams,
 }: {
   params: { slug: string[] };
   searchParams: any;
@@ -15,13 +13,11 @@ export default async function Page({
   }
 
   // currentPage parameter of category products
-  const { page } = searchParams;
   const urlPath = slug.join("/");
 
-
   return (
-        <div className="slug-wrapper">
-          <CmsPage slug={urlPath} />
-        </div>
-  )
+    <div className="slug-wrapper">
+      <CmsPage slug={urlPath} />
+    </div>
+  );
 }

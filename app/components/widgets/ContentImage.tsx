@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function ContentImage({ content }: any) {
   const imageAlt = content.fields.imageAltText;
   const imageSize = content.fields?.imageSize;
@@ -17,7 +18,7 @@ export default function ContentImage({ content }: any) {
         }`}
       >
         {/* eslint-enable*/}
-        <img
+        <Image
           src={imageURL}
           alt={imageAlt || ""}
           className="object-contain w-max m-auto pointer-events-auto  h-full"

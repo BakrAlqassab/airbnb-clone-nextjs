@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {safeUser} from "@/app/types";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 import useFavorite from "@/app/hooks/useFavorite";

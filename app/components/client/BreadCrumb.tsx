@@ -1,5 +1,5 @@
 import React from "react";
-import {useMessages} from "@/app/utils/utils";
+import { useMessages } from "@/app/utils/utils";
 import Link from "next/link";
 
 const BreadCrumb = ({ breadCrumbs }: { breadCrumbs: any[] }) => {

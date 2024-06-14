@@ -1,13 +1,10 @@
 import { getContentfulPages } from "@/app/utils/contentfulutils";
-import {getLocale} from "next-intl/server";
+import { getLocale } from "next-intl/server";
 import NotFound from "next/dist/client/components/not-found-error";
- import Widgets from "@/app/components/widgets/Widgets";
- import BreadCrumb from "@/app/components/client/BreadCrumb";
+import Widgets from "@/app/components/widgets/Widgets";
+import BreadCrumb from "@/app/components/client/BreadCrumb";
 
-async function getPathDataForSlugs(
-  slugParts: Array<string>,
-  lang: string,
-) {
+async function getPathDataForSlugs(slugParts: Array<string>, lang: string) {
   // Initialize path data array
   const breadcrumbs: any[] = [];
 
@@ -53,7 +50,6 @@ async function getPathDataForSlugs(
       name: entry.items[0].fields.title,
     });
 
-
     const subPages = entry.items[0].fields.subPages as Array<any>;
     const index = 1;
 
@@ -67,7 +63,7 @@ async function getPathDataForSlugs(
 export default async function CmsPage({ slug }: { slug: string }) {
   const lang = await getLocale();
   const slugParts = slug ? slug.split("/") : [];
-   const breadCrumbValues = await getPathDataForSlugs(slugParts, lang);
+  const breadCrumbValues = await getPathDataForSlugs(slugParts, lang);
   let widgets;
   try {
     const result = await getContentfulPages(
@@ -76,7 +72,8 @@ export default async function CmsPage({ slug }: { slug: string }) {
       "-sys.createdAt",
       10,
     );
-    widgets = result && result.items[0] ? result.items[0].fields.pageContent : null;
+    widgets =
+      result && result.items[0] ? result.items[0].fields.pageContent : null;
     // widgets = result ? result.items[0].fields.widgets : null;
   } catch (e) {
     console.log("Error getting codes.", e);
@@ -87,7 +84,7 @@ export default async function CmsPage({ slug }: { slug: string }) {
     <div className="mb-16">
       <div>
         {breadCrumbValues && <BreadCrumb breadCrumbs={breadCrumbValues} />}
-        {widgets &&  <Widgets widgets={widgets} /> }
+        {widgets && <Widgets widgets={widgets} />}
       </div>
     </div>
   );

@@ -3,7 +3,8 @@
 {/* prettier-ignore */}
 
 import React from "react";
- import LspdButton from "@/app/components/client/LspdButton";
+import Image from "next/image";
+import LspdButton from "@/app/components/client/LspdButton";
 import { useRouter } from "next/navigation";
 export default function Hero({ content }: any) {
   const router = useRouter();
@@ -47,7 +48,7 @@ export default function Hero({ content }: any) {
       >
         {iconUrl && (
           <div className={`self-start max-[768px]:${logoClassMobile}`}>
-            <img
+            <Image
               src={iconUrl}
               alt={iconAlt || ""}
               width="100"

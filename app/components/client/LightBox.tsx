@@ -101,7 +101,7 @@ const LightBox = ({
           <div className={"w-1/4 hidden md:block"}></div>
           <div className={"md:w-2/4 w-full text-white overflow-hidden "}>
             <div className="square relative bg-brand-gray-800">
-              <img
+              <Image
                 style={{
                   position: "absolute",
                   top: 0,

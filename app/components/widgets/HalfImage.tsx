@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import React from "react";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import LspdButton from "@/app/components/client/LspdButton";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function WysiwygBlock({ content }: any) {
   const router = useRouter();
@@ -52,7 +53,7 @@ export default function WysiwygBlock({ content }: any) {
             </div>
           </div>
           <div className="md:w-6/12">
-            <img
+            <Image
               src={imageURL}
               alt={imageAlt || ""}
               className="m-auto rounded-3xl object-contain w-full h-auto"

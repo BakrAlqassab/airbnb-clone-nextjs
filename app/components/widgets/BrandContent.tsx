@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 "use client";
 import TextEditor from "@/app/components/widgets/TextEditor";
 

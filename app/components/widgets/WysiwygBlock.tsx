@@ -1,11 +1,10 @@
-
 import React from "react";
 import TextEditor from "@/app/components/widgets/TextEditor";
 
 export interface WysiwygProps {
-    content: any;
-    alignLeft?: boolean;
-    fontSize?: string;
+  content: any;
+  alignLeft?: boolean;
+  fontSize?: string;
 }
 export default function WysiwygBlock({
   content,

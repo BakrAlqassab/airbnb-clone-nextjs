@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import LspdButton from "@/app/components/client/LspdButton";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+
 export default async function CtaBlock({ content }: any) {
   const router = useRouter();
   const title = content.fields.title;
@@ -12,9 +15,7 @@ export default async function CtaBlock({ content }: any) {
   const { backgroundColorSet } = content?.fields;
   return (
     <div>
-      <div
-        className="leaflet-attribution-flag flex rounded-3xl my-4 h-[270px] max-[768px]:h-full"
-      >
+      <div className="leaflet-attribution-flag flex rounded-3xl my-4 h-[270px] max-[768px]:h-full">
         <div
           className={`flex items-center p-3  w-full max-[768px]:block ${
             !imageURL ? "justify-center" : "justify-between"
@@ -22,7 +23,7 @@ export default async function CtaBlock({ content }: any) {
         >
           {imageURL && (
             <div className="w-6/12 text-center max-[768px]:w-full">
-              <img
+              <Image
                 src={imageURL}
                 alt={imageAlt || ""}
                 className={"m-auto rounded-3xl object-contain"}

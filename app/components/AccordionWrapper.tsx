@@ -25,14 +25,15 @@ export default function AccordionWrapper({
         <summary
           className={`flex gap-2 items-center border-b border-brand-gray-400 py-2 px-4 hover:bg-brand-gray-200 ${summaryWrapperStyle}`}
         >
-
-          <Image src="/images/chevron.svg"
-                 width={20}
-                 height={20}
-                 alt="chervon language dropdown icon"
-                 className={
+          <Image
+            src="/images/chevron.svg"
+            width={20}
+            height={20}
+            alt="chervon language dropdown icon"
+            className={
               "summary-chevron select-none " + (subTitle ? "self-start" : "")
-          }/>
+            }
+          />
           <div className="flex flex-col gap-2 w-fit grow">
             <h2
               className={`font-semibold select-none text-[28px] pt-2 pb-2 ${titleStyle}`}

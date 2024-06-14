@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Children, ReactNode } from "react";
 import { useMessages } from "@/app/utils/utils";
 
-import {BiChevronLeft,BiChevronRight} from "react-icons/bi";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 
 export function SwiperSlider({
   children,
@@ -58,7 +58,9 @@ export function SwiperSlider({
               className="swiper-button-prev slider-arrow border border-brand-black left-2 right-auto"
               aria-label={t("previous")}
               type="button"
-            > <BiChevronLeft size={12} color="black"/>
+            >
+              {" "}
+              <BiChevronLeft size={12} color="black" />
               {/*<ECOIcon icon="chevron_left" size={"xl"}></ECOIcon>*/}
             </button>
 
@@ -67,7 +69,7 @@ export function SwiperSlider({
               type="button"
               aria-label={t("next")}
             >
-                <BiChevronRight size={12} color="black"/>
+              <BiChevronRight size={12} color="black" />
             </button>
             {/*<div className="swiper-pagination"></div>*/}
           </div>

@@ -15,7 +15,6 @@ export default function DynamicComponentLoader({
     return <Accordion content={content} />;
   }
 
-
   if (componentName === "wysiwygBlock") {
     return <WysiwygBlock content={content} />;
   }
