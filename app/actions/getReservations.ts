@@ -31,7 +31,7 @@ export default async function getReservations(params: Iparams) {
       },
     });
 
-    const safeReservation = reservations.map((reservation) => ({
+    const safeReservation = reservations.map((reservation: any) => ({
       ...reservation,
       createdAt: reservation.createdAt.toISOString(),
       startDate: reservation.startDate.toISOString(),
@@ -43,7 +43,7 @@ export default async function getReservations(params: Iparams) {
     }));
 
     return safeReservation;
-  } catch (error) {
+  } catch (error: any) {
     throw new Error(error);
   }
 }

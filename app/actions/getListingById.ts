@@ -30,7 +30,7 @@ export default async function getListingById(params: Iparams) {
         emailVerified: listing.user.emailVerified?.toString() || null,
       },
     };
-  } catch (error) {
+  } catch (error: any) {
     throw new Error(error);
   }
 }
