@@ -8,11 +8,7 @@ import Categories from "@/app/components/navbar/Categories";
 import LanguageSelector from "@/app/components/navbar/LanguageSelector";
 import { useLocale } from "next-intl";
 import { useMessagesObject } from "@/app/utils/utils";
-export default function Navbar({
-  currentUser,
-}: {
-  currentUser?: safeUser | null;
-}) {
+export default function Navbar({ currentUser }: { currentUser?: any }) {
   const lang = useLocale();
 
   const messages = useMessagesObject();

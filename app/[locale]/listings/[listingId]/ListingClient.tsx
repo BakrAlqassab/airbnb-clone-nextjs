@@ -22,7 +22,7 @@ const initialDateRange = {
 interface ListingClientProps {
   reservations?: SafeReservations[];
   listing: safeListing & { user: safeUser[] };
-  currentUser: safeUser[] | null;
+  currentUser: safeUser | null | undefined;
 }
 
 export default function ListingClient({
@@ -49,14 +49,19 @@ export default function ListingClient({
     return dates;
   }, [reservations]);
 
-  function checkDate(d) {
+  function checkDate(d: any) {
     return d.setHours(0, 0, 0, 0) == new Date().setHours(0, 0, 0, 0);
   }
 
-  const isTodayReserved =
-    disabledDates.some(checkDate) &&
-    dateRange.startDate.setHours(0, 0, 0, 0) ===
-      new Date().setHours(0, 0, 0, 0);
+  let isTodayReserved;
+
+  if (dateRange) {
+    isTodayReserved =
+      disabledDates.some(checkDate) &&
+      dateRange &&
+      dateRange?.startDate?.setHours(0, 0, 0, 0) ===
+        new Date().setHours(0, 0, 0, 0);
+  }
 
   const onCreateReservation = useCallback(() => {
     if (!currentUser) {

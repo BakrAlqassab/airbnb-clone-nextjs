@@ -10,7 +10,7 @@ const Map = dynamic(() => import("../Map"), {
 });
 
 interface ListingInfoProps {
-  user: safeUser;
+  user: safeUser[];
   category:
     | {
         icon: IconType;

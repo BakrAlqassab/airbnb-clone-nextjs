@@ -11,6 +11,8 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-any": "off",
+   "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
     "@typescript-eslint/ban-ts-comment": "warn",
     "prettier/prettier": [
       "error",

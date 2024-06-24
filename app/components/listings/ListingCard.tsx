@@ -13,10 +13,10 @@ interface ListingCardProps {
   key?: string;
   data: safeListing;
   reservation?: SafeReservations | undefined;
-  onAction: (id: string) => void;
+  onAction?: (id: string) => void;
   disabled?: boolean;
   actionLabel?: string;
-  actionId: string;
+  actionId?: string;
   currentUser?: safeUser;
 }
 
