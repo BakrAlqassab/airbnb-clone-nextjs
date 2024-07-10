@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { ECOIcon } from "@/components/client/ECOIcon";
+import { ECOIcon } from "@/app/components/client/ECOIcon";
 import Image from "next/image";
 
 import { useState } from "react";
-import { SwiperSlider } from "@/components/client/SwiperSlider";
+import { SwiperSlider } from "@/app/components/client/SwiperSlider";
 import { useMessages } from "@/utils/utils";
 import { PhotoEventPhoto, PhotoEventPhotos } from "@/types/photoevent";
 

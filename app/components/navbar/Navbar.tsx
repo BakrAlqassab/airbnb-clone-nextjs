@@ -3,7 +3,6 @@ import Container from "../Container";
 import Logo from "@/app/components/navbar/Logo";
 import Search from "@/app/components/navbar/Search";
 import UserMenu from "@/app/components/navbar/UserMenu";
-import { safeUser } from "@/app/types";
 import Categories from "@/app/components/navbar/Categories";
 import LanguageSelector from "@/app/components/navbar/LanguageSelector";
 import { useLocale } from "next-intl";
