@@ -8,7 +8,7 @@ import SearchModal from "@/app/components/modals/SearchModal";
 import ToasterProvider from "@/app/providers/ToasterProvider";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import RentModal from "@/app/components/modals/RentModal";
-import { useLocale } from "next-intl";
+//  import {useLocale} from "next-intl";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
   description: "Airbnb App clone project",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const currentUser = getCurrentUser();
-  const lang = useLocale();
+  const currentUser = await getCurrentUser();
+  //  const lang = useLocale();
   return (
-    <html lang={lang}>
+    <html lang={"lang"}>
       <body className={font.className}>
         <ToasterProvider />
         <RegisterModal />

@@ -1,0 +1,233 @@
+[33mcommit 8f6c3b33c1f1daaa014fb6febb87c9a66e2fa67b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Jun 24 16:30:44 2024 +0300
+
+     small fixing in clean the code
+
+[33mcommit b1f49f8186ecd759043b9d93968343b6499bc2b9[m
+Author: unknown <alqassab31@gmail.com>
+Date:   Fri Jun 14 12:26:16 2024 +0300
+
+    clean the code
+
+[33mcommit f2fb23b9e69e5fa76ccd7650ba754f93c71f09d9[m
+Author: unknown <alqassab31@gmail.com>
+Date:   Thu Jun 13 15:23:53 2024 +0300
+
+    add Docker Image
+
+[33mcommit 9146a9aad12cc14a44c0500696c81cb1ba5057f0[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Wed May 8 10:38:33 2024 +0300
+
+    reduce the blur of the not hovered cards
+
+[33mcommit 660bf660cbb3a83f5ee96b589de74ff163fadab1[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Tue May 7 15:41:07 2024 +0300
+
+    add animation to the cards
+
+[33mcommit 0a05f4d5ba2906eaf7a4ed6dc12ecc2f9350219c[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Tue May 7 12:44:42 2024 +0300
+
+    add placeholder image and clean the code
+
+[33mcommit e832aa962b83b832aebb640ffd5e061c9aeb205d[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon May 6 17:25:09 2024 +0300
+
+    add Particles and clean the code
+
+[33mcommit 4f9d18d52c31cedd3823db1cb35820784469a914[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Fri May 3 11:49:58 2024 +0300
+
+    add swipper slider
+
+[33mcommit 5c706518b20fd6aa3a004db2343901b6dc3bcfb7[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Thu May 2 16:31:09 2024 +0300
+
+    add the llissting filteres and the laoding page adn the search params when change the language
+
+[33mcommit 4d0a6ee4008c8006c49a5f16a41c1f120944a4c9[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Apr 29 16:42:19 2024 +0300
+
+    fix properties show bug
+
+[33mcommit f7f2ce6df4ba154d0b69dec609f46285c8c30751[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Apr 29 16:29:16 2024 +0300
+
+    clean teh code and make the calendar functionality better and fix routering issue
+
+[33mcommit 2a2fa6f96fee377447361a0272b057af961b03a7[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Apr 29 15:01:00 2024 +0300
+
+    add contentful to the page
+
+[33mcommit 5c76f9cb6d91a553fa751a36d5031ee5746d42be[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Apr 29 10:56:04 2024 +0300
+
+    add the env file tpl to remember the needed variables i nthe future
+
+[33mcommit 73eef63ba59125ff3823d8828d0d909488c41119[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Apr 29 10:54:43 2024 +0300
+
+    Stopped tracking .env File
+
+[33mcommit 6c6b6e8e2370f75a898ca2dfc264aac3d037d7f6[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Apr 29 10:49:47 2024 +0300
+
+    accedently pushed data
+
+[33mcommit 26ffc9028194ae6c8ce898bfca04c640ea0c17cf[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Apr 29 10:45:38 2024 +0300
+
+    add the my properties field
+
+[33mcommit de823868ce5716578546ab25316e9e4b264c4cba[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Fri Apr 26 10:35:14 2024 +0300
+
+    add outside click to the language selector and clean the code
+
+[33mcommit 3b39d43dac3d58ad3f7a0c7bcf665d1d749a721c[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Thu Apr 25 15:32:48 2024 +0300
+
+    add the languager selecting and functionality
+
+[33mcommit 5549955551ac6cc4b4efc6c7dae13aa1345c2da4[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Wed Apr 24 14:33:50 2024 +0300
+
+    add confirmation to delete reervation and check the functionality
+
+[33mcommit 50bbd56e26e552d8a95a449ac4bc5a69702cc0a1[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Wed Apr 24 10:37:30 2024 +0300
+
+     add the reservation deletingh and trips client and the landlord
+
+[33mcommit df45333376baa5661eb7fc38a7e2fb928539e1b2[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Tue Apr 9 16:14:26 2024 +0300
+
+    add the calendar and add the selected data to the database
+
+[33mcommit 62a2228b607ece08b804eb5e492825fa787de302[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Apr 8 16:35:28 2024 +0300
+
+    add the listing cared based on the Id, and start with select of the calendar dates
+
+[33mcommit a9e6fac9aa87099d9c7cfac4460b5d749d57473a[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Tue Apr 2 19:00:18 2024 +0300
+
+    fix the unfavorite issue
+
+[33mcommit ce82c6d0b954193d670750dfbd67458e9fd28156[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Tue Apr 2 18:46:28 2024 +0300
+
+    add the favorite accommodation
+
+[33mcommit eff431095593e1fa0f4ff3e73a864dabba0b3ab9[m
+Merge: 5b5b5b0 dd7aad4
+Author: Bakr Al-Qassab <33801792+BakrAlqassab@users.noreply.github.com>
+Date:   Thu Mar 28 16:03:53 2024 +0200
+
+    Merge pull request #4 from BakrAlqassab/create-image-uploading-component
+    
+    add the Cloudinary image upload + description + price
+
+[33mcommit dd7aad47fce9651b79e93c9fd624fabda909187e[m[33m ([m[1;31morigin/create-image-uploading-component[m[33m)[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Thu Mar 28 16:02:50 2024 +0200
+
+    add the cloudinary image upload + description + price
+
+[33mcommit 5b5b5b0e900724e5e1b2a1dea49fcb8f41bc6034[m
+Merge: d2c1c6c 2d58545
+Author: Bakr Al-Qassab <33801792+BakrAlqassab@users.noreply.github.com>
+Date:   Wed Mar 27 14:48:43 2024 +0200
+
+    Merge pull request #3 from BakrAlqassab/create-counter
+    
+    create rooms, guests, bathroom counter component
+
+[33mcommit 2d58545fee471eb0794926ba9526e7ef51070b20[m[33m ([m[1;31morigin/create-counter[m[33m)[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Wed Mar 27 14:47:28 2024 +0200
+
+    create rooms, guests, bathroom counter component
+
+[33mcommit d2c1c6c948944e1c86511a359955030f1ed89c99[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Wed Mar 27 14:06:31 2024 +0200
+
+     add categories adn the airbnb home categories UI and the Location
+
+[33mcommit 7f61176115fb2de0e05705761aaadd8c88c5e47e[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Mar 25 14:14:19 2024 +0200
+
+    create the login and register providers by github and google and clean the code and create the categories
+
+[33mcommit cc90bec05dc8e4134af89124b3a14f42ec87f84b[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Wed Mar 20 12:53:06 2024 +0200
+
+    add the login and register functionality
+
+[33mcommit 303ad629c6a65fbe7f70e75b47edd6e43f0ca979[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Tue Mar 19 13:37:09 2024 +0200
+
+    finish the regiser UI
+
+[33mcommit 96af3d218108b360d1996b74f9ca937b65e6f727[m
+Merge: 56a674c aa0945b
+Author: Bakr Al-Qassab <33801792+BakrAlqassab@users.noreply.github.com>
+Date:   Tue Mar 19 11:14:58 2024 +0200
+
+    Merge pull request #2 from BakrAlqassab/small-fixes
+    
+    small fixes in eslint and Modal
+
+[33mcommit aa0945b9cf7063e7b6563645aeb4099e57bcc359[m[33m ([m[1;31morigin/small-fixes[m[33m)[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Tue Mar 19 11:14:10 2024 +0200
+
+    small fixes in eslint and Mdoal
+
+[33mcommit 56a674c7b330b6ed50825519f3966030279e0a9f[m
+Merge: 73d42d9 17103a5
+Author: Bakr Al-Qassab <33801792+BakrAlqassab@users.noreply.github.com>
+Date:   Mon Mar 18 15:25:08 2024 +0200
+
+    Merge pull request #1 from BakrAlqassab/install-the-basics-of-the-project
+    
+     add the structure and the assets and the Navbar
+
+[33mcommit 17103a5b376fc2bcb85df4a9c6e1ca563d17faf4[m[33m ([m[1;31morigin/install-the-basics-of-the-project[m[33m)[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Mon Mar 18 15:22:26 2024 +0200
+
+     add teh structure and the assets and the Navbar
+
+[33mcommit 73d42d9f5dbda019d23d949db38eb5afd6942576[m
+Author: bakr <alqassab31@gmail.com>
+Date:   Fri Mar 15 13:43:23 2024 +0200
+
+    Initial commit from Create Next App
