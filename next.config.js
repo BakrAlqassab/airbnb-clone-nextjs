@@ -21,14 +21,12 @@ const nextConfig = {
   // },
   scripts: {
     postinstall: "prisma generate",
+    build: "next build",
+
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  distDir: "build",
-  //   experimental: {
-  //     serverActions: true,
-  //   },
 };
 
 module.exports = withNextIntl(nextConfig);
