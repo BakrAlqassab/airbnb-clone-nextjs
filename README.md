@@ -11,7 +11,7 @@
 - Axios
 - contentful
 
-**to have the project work first need to fill in the below variables:**
+**To have the project work first need to clone the project and fill in the below variables:**
 
 DATABASE_URL=""     MongoDB  [MongoDB](https://www.mongodb.com/products)
 NEXTAUTH_SECRET = ""   [Next Auth](https://next-auth.js.org/)
@@ -29,6 +29,11 @@ NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME= ""   [Cloudinary](https://next-auth.js.org/](
 CTF_SPACE_ID =""   [Contentful]([https://next-auth.js.org/](https://cloudinary.com/](https://www.contentful.com/))
 
 CTF_CDA_ACCESS_TOKEN =""  [Contentful]([https://next-auth.js.org/](https://cloudinary.com/](https://www.contentful.com/))
+
+```javascript
+npm I
+npm run dev
+```
 
 
   
