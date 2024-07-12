@@ -25,6 +25,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  distDir: "build",
   //   experimental: {
   //     serverActions: true,
   //   },
