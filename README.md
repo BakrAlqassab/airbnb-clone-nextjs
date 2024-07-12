@@ -30,6 +30,7 @@ CTF_SPACE_ID =""   [Contentful]([https://next-auth.js.org/](https://cloudinary.c
 
 CTF_CDA_ACCESS_TOKEN =""  [Contentful]([https://next-auth.js.org/](https://cloudinary.com/](https://www.contentful.com/))
 
+
 ```javascript
 npm I
 npm run dev
