@@ -19,12 +19,15 @@ const nextConfig = {
   //     locales: ['en', 'fi', 'sv'], // Add your default language and other languages
   //     defaultLocale: 'fi', // Set the default language
   // },
+  scripts: {
+    postinstall: "prisma generate",
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    serverActions: true,
-  },
+  //   experimental: {
+  //     serverActions: true,
+  //   },
 };
 
 module.exports = withNextIntl(nextConfig);
