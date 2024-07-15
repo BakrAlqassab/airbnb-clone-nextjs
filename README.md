@@ -38,11 +38,12 @@ npm run dev
 
 **IMAGES**
 
-![Main Page](https://i.postimg.cc/P5QRsNgg/Screenshot-2024-07-10-141355.png)
-![Login Page](https://i.postimg.cc/3NQqQpwH/Screenshot-2024-07-15-125118.png)
-![Reservation Page and localization Drop down](https://i.postimg.cc/3JFx6FwY/Screenshot-2024-07-15-125715.png)
+![Main Page](https://i.postimg.cc/QN4qG1nG/Screenshot-2024-07-15-125059.png)
 ![Reservation Page and localization Drop down](https://i.postimg.cc/K8yxZkRQ/Screenshot-2024-07-15-125118.png)
-![Reservation Page and localization Drop down](https://i.postimg.cc/K8yxZkRQ/Screenshot-2024-07-15-125118.png)
+![Reservation Page and localization Drop down](https://i.postimg.cc/nMfrb3yG/Screenshot-2024-07-15-125715.png)
+
+
+
 
 
 
