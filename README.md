@@ -1,5 +1,9 @@
 **Airbnb Clone Project**
 
+is an Accommodation project cloned based on the main Airbnb website idea, **For learning purposes**
+
+the project has many fields: My Trip, My Reservation, My Favorite, and My Properties additionally to the main page and Login page with Google & GitHub authentication
+
 **Used techniques**
 - Next authentication with Google & GitHub
 - MongoDB
