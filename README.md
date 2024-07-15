@@ -38,7 +38,7 @@ npm run dev
 
 **IMAGES**
 
-![Main Image](https://ibb.co/L6r9Rhs)
+![Main Image](https://i.postimg.cc/P5QRsNgg/Screenshot-2024-07-10-141355.png)
 
 
   
