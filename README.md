@@ -36,5 +36,9 @@ npm I
 npm run dev
 ```
 
+**IMAGES**
+
+![Main Image](https://ibb.co/L6r9Rhs)
+
 
   
