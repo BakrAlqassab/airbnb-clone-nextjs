@@ -2,7 +2,8 @@
 
 is an Accommodation project cloned based on the main Airbnb website idea, **For learning purposes**
 
-the project has many fields: My Trip, My Reservation, My Favorite, and My Properties additionally to the main page and Login page with Google & GitHub authentication
+The project has many fields: My Trip, My Reservation, My Favorite, and My Properties additionally to the main page and Login page with Google & GitHub authentication
+the project has localization for *Finnish** && **English**, languages. **Swedish** localization is not active to get privilege from the free use of Contentful for two languages only but the infra for it exists
 
 **Used techniques**
 - Next authentication with Google & GitHub
