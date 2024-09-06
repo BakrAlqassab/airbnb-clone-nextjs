@@ -3,7 +3,6 @@ import { getLocale } from "next-intl/server";
 import NotFound from "next/dist/client/components/not-found-error";
 import Widgets from "@/app/components/widgets/Widgets";
 import BreadCrumb from "@/app/components/client/BreadCrumb";
-
 async function getPathDataForSlugs(slugParts: Array<string>, lang: string) {
   // Initialize path data array
   const breadcrumbs: any[] = [];
@@ -20,7 +19,7 @@ async function getPathDataForSlugs(slugParts: Array<string>, lang: string) {
 
     // Search for slug in subPages array
     const subPage = subPages.find((page) => page.fields.slug === slug);
-
+    const lang = await getLocale();
     // If found => add it to breadcrumbs
     if (subPage) {
       // slice => Take all parts beginning from 0 to current index
@@ -41,6 +40,7 @@ async function getPathDataForSlugs(slugParts: Array<string>, lang: string) {
     slugParts[0],
     "-sys.createdAt",
     10,
+    lang,
   );
 
   // Add root entry
@@ -71,6 +71,7 @@ export default async function CmsPage({ slug }: { slug: string }) {
       slugParts[slugParts.length - 1],
       "-sys.createdAt",
       10,
+      lang,
     );
     widgets =
       result && result.items[0] ? result.items[0].fields.pageContent : null;

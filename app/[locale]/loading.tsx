@@ -1,6 +1,6 @@
 const Loading = () => {
   return (
-    <div className="flex justify-center items-center h-full">
+    <div className="flex justify-center items-center h-[100vh]">
       <svg className="bike" viewBox="0 0 48 30" width="48px" height="30px">
         <g
           fill="none"

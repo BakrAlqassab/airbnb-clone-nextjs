@@ -19,11 +19,11 @@ export default function WysiwygBlock({ content }: any) {
     <div>
       <div className="content">
         <div
-          className={`my-6 flex justify-between gap-6 items-center w-full max-[768px]:block h-max-16 ${
+          className={`my-6 h-96 overflow-hidden flex justify-between gap-6 items-center w-full max-[768px]:block h-max-16  ${
             alignImage === "Left" ? "flex-row-reverse" : "flex-row"
           }`}
         >
-          <div className="md:px-4 lg:px-12 md:w-6/12 flex justify-center">
+          <div className="md:px-4 lg:px-12 md:w-6/12 flex justify-center  h-[32rem]">
             <div className="text-left">
               <h2 className="my-2">{title}</h2>
               <div
@@ -52,10 +52,22 @@ export default function WysiwygBlock({ content }: any) {
               </div>
             </div>
           </div>
-          <div className="md:w-6/12">
-            <Image
+          <div className="md:w-6/12 h-full w-full relative">
+            {/* <Image
+              fill
               src={imageURL}
               alt={imageAlt || ""}
+              className="m-auto rounded-3xl object-contain w-full h-auto"
+            /> */}
+
+            <Image
+              fill
+              alt={imageAlt || ""}
+              src={
+                imageURL
+                  ? `https:${imageURL}`
+                  : "/images/default-product-image.png"
+              }
               className="m-auto rounded-3xl object-contain w-full h-auto"
             />
           </div>

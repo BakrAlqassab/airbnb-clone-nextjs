@@ -1,5 +1,4 @@
 import { createClient } from "contentful";
-import { useLocale } from "next-intl";
 
 const client = createClient({
   space: process.env.CTF_SPACE_ID || "",
@@ -19,9 +18,8 @@ export async function getContentfulPages(
   pagePath: any,
   order: any,
   include?: any,
+  lang,
 ) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const lang = useLocale();
   if (pagePath && lang !== "sv") {
     const response = await client.getEntries({
       content_type: content_type,

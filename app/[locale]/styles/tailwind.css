@@ -838,6 +838,10 @@ video {
 .h-24 {
   height: 6rem !important;
 }
+.h-96 {
+
+  height: 28rem;
+}
 
 .h-\[100vh\] {
   height: 100vh !important;
