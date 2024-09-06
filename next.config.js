@@ -22,7 +22,6 @@ const nextConfig = {
   scripts: {
     postinstall: "prisma generate",
     build: "next build",
-
   },
   typescript: {
     ignoreBuildErrors: true,
