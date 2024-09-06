@@ -1,5 +1,7 @@
 import "./styles/globals.css";
 import "./styles/test.css";
+import "../src/styles/tailwind.css";
+
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import Navbar from "@/app/components/navbar/Navbar";
