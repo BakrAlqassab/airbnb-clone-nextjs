@@ -19,10 +19,6 @@ const nextConfig = {
   //     locales: ['en', 'fi', 'sv'], // Add your default language and other languages
   //     defaultLocale: 'fi', // Set the default language
   // },
-  scripts: {
-    postinstall: "prisma generate",
-    build: "next build",
-  },
   typescript: {
     ignoreBuildErrors: true,
   },

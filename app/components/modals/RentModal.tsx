@@ -67,8 +67,16 @@ export default function RentModal() {
       dynamic(() => import("../Map"), {
         ssr: false,
       }),
-    [location],
+    [],
   );
+
+  // const Map = useMemo(
+  //   () =>
+  //     dynamic(() => import("../Map"), {
+  //       ssr: false,
+  //     }),
+  //   [location],
+  // );
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
       shouldDirty: true,
