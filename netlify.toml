@@ -9,3 +9,9 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+
+[[headers]]
+  for = "/_next/static/css/*"
+  [headers.values]
+    Content-Type = "text/css"
