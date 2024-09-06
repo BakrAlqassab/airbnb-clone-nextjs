@@ -1,6 +1,6 @@
 [build]
   command = "npx prisma generate && npm run build"
-  publish = ".next"
+  publish = "out"
 
 [[redirects]]
   from = "/*"
@@ -9,7 +9,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
 
 [[headers]]
   for = "/_next/static/css/*"
